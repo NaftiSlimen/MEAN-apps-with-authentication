@@ -1,0 +1,38 @@
+
+<H1>Information about game: 
+</br>
+</br>
+</br><p>{{GameDisplayController.game.title}}</p>
+</br>
+</H1>
+<p style="font-size:1vw">Price: {{GameDisplayController.game.price| currency}}<BR />
+    Minimum Players: {{GameDisplayController.game.minPlayers}}<BR />
+    Maximum Players:{{GameDisplayController.game.maxPlayers}}<BR />
+    Minimum Age: {{GameDisplayController.game.minAge}}</BR>
+    Publisher: {{GameDisplayController.game.publisher.name | uppercase}}</p>
+
+
+    <button type="submit" class="btn-success" ng-click="GameDisplayController.deleteGameController(GameDisplayController.game._id)">Delete Game</button>
+
+    <form name="GameDisplayController.updategameForm" ng-submit="GameDisplayController.updateGame(GameDisplayController.game._id)" >
+
+        Fully Update Game<BR/>
+    
+        Price: <input type="number" ng-value="GameDisplayController.game.price" name="price" required ng-model="GameDisplayController.newGamePrice" style="color:black"/><BR/>
+    
+    
+        Minimum Number of Players: <input ng-value="GameDisplayController.game.minPlayers" type="number" name="minPlayers" required ng-model="GameDisplayController.newGameMinPlayers" style="color:black"/>
+    
+        <span ng-show="GameDisplayController.updategameForm.minPlayers.$dirty && GameDisplayController.updategameForm.minPlayers.$invalid && GameDisplayController.updategameForm.isSubmitted" style="color:black">Minimum players must be at least 1.</span>
+    
+        <BR/>
+    
+        Maximum Number of Players: <input ng-value="GameDisplayController.game.maxPlayers" type="number" name="maxPlayers" required ng-model="GameDisplayController.newGameMaxPlayers" style="color:black"/><BR/>
+    
+        Minimum Recommended Player Age: <input type="number" ng-value="GameDisplayController.game.minAge" name="minAge" required ng-model="GameDisplayController.newGameMinAge" style="color:black"/><BR/>
+    
+        Publisher: <input ng-value="GameDisplayController.game.publisher.name" type="text" name="designer" required ng-model="GameDisplayController.newGameDesigner" style="color:black"/><BR/>
+    
+        <button type="submit" class="btn-success">Edit Game</button><BR/>
+        
+    </form>
