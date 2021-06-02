@@ -1,4 +1,5 @@
 require("./gamesModel.js")
+require("./usersModel.js");
 const mongoose=require("mongoose");
 
 const dbName="meanGamesGeo";
